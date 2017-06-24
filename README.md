@@ -3,7 +3,7 @@
 ## Instructions
 1. Clone repo
 	```
-		git clone
+		git clone https://github.com/JacobPolloreno/dog-breed-web-classifier.git
 		cd dog-breed-classifier
 	```
 2. Download necessary requirements
