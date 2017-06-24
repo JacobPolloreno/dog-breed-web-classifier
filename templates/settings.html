@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block body %}
+    <form action="{{ url_for('settings') }}" method="POST">
+        <div class="form-group">
+            <label for="model">Select Model To Use:</label>
+            <select class="form-control" name="model" id="model">
+                <option value="inception">Inception V3</option>
+                <option value="resnet">Resnet50</option>
+            </select>
+            <p class="help-block">
+            The inception model takes longer to load since it's loading the
+            whole architecture and weights. On the other hand, the Resnet50
+            loads a smaller architecture that'll be placed on top of the
+            Resnet50 model bottleneck features.
+            </p>
+            <label class="btn btn-primary">
+                Submit<input type="submit" value="settings" style="display:
+                none;">
+            </label>
+        </div>
+    </form>
+{% endblock %}

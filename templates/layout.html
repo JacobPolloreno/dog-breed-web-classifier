@@ -1,0 +1,30 @@
+<!doctype html>
+<head>
+    <title>Simple Dog Breed Classifier</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">
+                Dog Breed
+                {% if model_name is defined %}
+                    {{ model_name|title }}
+                {% endif %}
+                Classifier
+            </a>
+        </div>
+        <div class="pull-right">
+            <a class="btn btn-default navbar-btn" href='{{ url_for('index')
+            }}'>Start Over</a>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    {% block body %}{% endblock %}
+</div>

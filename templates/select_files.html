@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block body %}
+    <form action="{{ url_for('predict') }}" method="POST"
+                                            enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="fileupload">Select Files:</label>
+            <input type="file" name="file[]" multiple="" id='fileupload'>
+            <p class="help-block">Image types only. Image will be converted to
+            proper shape.<br/>Also allow for time for image upload and predictions.
+            </p>
+            <label class="btn btn-primary">
+                Upload <input type="submit" value="Upload" style="display:
+                none;">
+            </label>
+        </div>
+    </form>
+{% endblock %}
