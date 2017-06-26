@@ -19,6 +19,9 @@
 6. Upload Image files
 
 ## Included Pre-trained Models
+
+Code used to train models can be found here: https://github.com/JacobPolloreno/Artificial-Intelligence-ND/tree/master/CNN
+
 The included Inception and Resnet50 models were trained to predict dog breeds. On a test set, the Inception v3 model returned an accuracy of 74% while the Resnet50 was 84% accurate.
 
 The architecture and weights files for the inception model include a beheaded inception v3 network with a GAP layer and two dense layers appended onto it.
