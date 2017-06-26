@@ -20,8 +20,8 @@
             </a>
         </div>
         <div class="pull-right">
-            <a class="btn btn-default navbar-btn" href='{{ url_for('index')
-            }}'>Start Over</a>
+            {% block nav_buttons %}
+            {% endblock %}
     </div>
 </nav>
 

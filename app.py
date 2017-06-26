@@ -3,7 +3,7 @@ import logging
 import io
 import os
 
-from flask import Flask, render_template, request, send_from_directory
+from flask import Flask, render_template, request
 from load import init_model
 from PIL import Image
 from util import decode_prob

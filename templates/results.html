@@ -1,18 +1,19 @@
 {% extends "layout.html" %}
 {% block body %}
-<table class="table table-sm table-stripped">
+<table class="table table-hover table-sm table-stripped">
     <tbody>
         {% for result in results %}
         <tr>
             <td align="center"><b> {{ result.filename }} </b></td>
             {% for predict_prob in result.predict_probs %}
-                <td align="center"><b> {{ predict_prob.name }} </b></td>
+                <td align="center"><b> {{ predict_prob.name|replace("_", " ")|
+                        title}} </b></td>
             {% endfor %}
         </tr>
         <tr>
             <td align="center">
                 <img src="data:image/png;base64,{{ result.image }}" style="width:244px;
-                height:224px;"/>
+                height:224px;" class="img-rounded"/>
             </td>
             {% for predict_prob in result.predict_probs %}
                 <td class="vert-align" align="center"> {{ predict_prob.prob }}
@@ -22,4 +23,8 @@
         {% endfor %}
     </tbody>
 </table>
+{% endblock %}
+{% block nav_buttons %}
+<a class="btn btn-default navbar-btn" href='{{ url_for('index')}}'>Start Over</a>
+<a class="btn btn-default navbar-btn" href='{{ url_for('predict')}}'>Select New Files</a>
 {% endblock %}

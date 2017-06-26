@@ -9,7 +9,10 @@ LABELS_PATH = os.path.abspath('labels.txt')
 
 global labels
 
-labels = np.loadtxt(LABELS_PATH, delimiter=",", dtype='str')
+with open(LABELS_PATH) as f:
+    labels = f.readlines()
+
+labels = np.array([label.strip() for label in labels])
 
 
 def img_to_tensor(img):
@@ -50,7 +53,7 @@ def preprocess_resnet(img):
     return extract_bottleneck_features_resnet(img)
 
 
-def decode_prob(output_arr, top_probs=8):
+def decode_prob(output_arr, top_probs=5):
     """Label class probabilities with class names
 
     :param output_arr, list: class probabilities

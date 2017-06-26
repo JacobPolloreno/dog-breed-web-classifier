@@ -5,13 +5,16 @@
             <label for="model">Select Model To Use:</label>
             <select class="form-control" name="model" id="model">
                 <option value="inception">Inception V3</option>
-                <option value="resnet">Resnet50</option>
+                <option value="resnet">Resnet50 (using bottleneck features as
+                input)</option>
             </select>
             <p class="help-block">
-            The inception model takes longer to load since it's loading the
-            whole architecture and weights. On the other hand, the Resnet50
-            loads a smaller architecture that'll be placed on top of the
-            Resnet50 model bottleneck features.
+            The Inception model takes longer to load since it's loading the
+            whole architecture and weights but inference will be
+            faster.<br/><br/>On the other hand, the Resnet50
+            loads a smaller architecture but inference is slower because it
+            needs to extract bottleneck features on the Keras Resnet50 model
+            before doing predictions.
             </p>
             <label class="btn btn-primary">
                 Submit<input type="submit" value="settings" style="display:
